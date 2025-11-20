@@ -1,0 +1,52 @@
+9(c) Member Function of Another Class as Friend
+Aim: To demonstrate how a member function of one class can be declared as a friend in another class.
+
+Algorithm:
+
+Start the program.
+Use forward declaration for the base class.
+Define class GFG with a member function GFG_Function().
+Declare this function as a friend inside the base class.
+Define and use the function to access private and protected members.
+Stop the program.
+Source Code:
+
+#include <iostream>
+using namespace std;
+
+class base; // forward declaration
+
+class GFG {
+public:
+    void GFG_Function(base &obj);
+};
+
+class base {
+private:
+    int private_variable;
+protected:
+    int protected_variable;
+
+public:
+    base() {
+        private_variable = 10;
+        protected_variable = 99;
+    }
+    friend void GFG::GFG_Function(base &);
+};
+
+void GFG::GFG_Function(base &obj) {
+    cout << "Private Variable: " << obj.private_variable << endl;
+    cout << "Protected Variable: " << obj.protected_variable << endl;
+}
+
+int main() {
+    base b;
+    GFG g;
+    g.GFG_Function(b);
+    return 0;
+}
+Result:
+
+Private Variable: 10
+Protected Variable: 99
