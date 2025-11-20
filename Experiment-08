@@ -1,0 +1,71 @@
+Program 8: Virtual Base Class
+Aim: To demonstrate the concept of virtual base class in C++.
+
+Algorithm:
+
+Start the program.
+Create a base class Person.
+Create two derived classes Student and Employee inheriting Person virtually.
+Create a new class Manager derived from both Student and Employee.
+Show that only one instance of base class Person is inherited.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    void getName() {
+        cout << "Enter Name: ";
+        cin >> name;
+    }
+};
+
+class Student : virtual public Person {
+public:
+    int rollNo;
+    void getRoll() {
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+    }
+};
+
+class Employee : virtual public Person {
+public:
+    int empID;
+    void getEmpID() {
+        cout << "Enter Employee ID: ";
+        cin >> empID;
+    }
+};
+
+class Manager : public Student, public Employee {
+public:
+    void display() {
+        cout << "\nManager Details:\n";
+        cout << "Name: " << name << "\nRoll No: " << rollNo << "\nEmployee ID: " << empID << endl;
+    }
+};
+
+int main() {
+    Manager m;
+    m.getName();
+    m.getRoll();
+    m.getEmpID();
+    m.display();
+    return 0;
+}
+Sample Output:
+
+Enter Name: Riya
+Enter Roll Number: 12
+Enter Employee ID: 501
+
+Manager Details:
+Name: Riya
+Roll No: 12
+Employee ID: 501
+Result: The program successfully shows that virtual inheritance avoids multiple copies of the base class when using multiple inheritance.
