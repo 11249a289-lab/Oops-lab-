@@ -1,0 +1,51 @@
+Experiment 29:To write a C++ program that shows
+
+Aim:
+
+To write a C++ program that shows
+
+1. Use of this pointer
+2. Use of inline function
+
+
+ Algorithm:
+
+1. Create a class with data members.
+2. Use this-> to assign values inside a constructor or member function.
+3. Create an object and display the values.
+For inline function
+1. Create a small function using keyword inline.
+2. Call the inline function and display the result.
+
+Program:
+
+#include <iostream>
+using namespace std;
+inline int add(int a, int b) {
+    return a + b;    // inline function
+}
+class Sample {
+    int x;
+public:
+    Sample(int x) {
+        this->x = x;     // using this pointer
+    }
+    void show() {
+        cout << "Value = " << x << endl;
+    }
+};
+int main() {
+    Sample s(10);
+    s.show();
+    cout << "Addition = " << add(5, 3) << endl;
+    return 0;
+}
+
+ Output:
+
+Value = 10
+Addition = 8
+
+Result:
+
+The program successfully demonstrates the use of this pointer to access object members and inline function to improve function efficiency.
