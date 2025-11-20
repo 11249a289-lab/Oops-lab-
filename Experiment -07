@@ -1,0 +1,72 @@
+Program 7: Multilevel Inheritance
+Aim: To illustrate multilevel inheritance in C++.
+
+Algorithm:
+
+Start the program.
+Define a base class Person.
+Define a derived class Student from Person.
+Define another derived class Marks from Student.
+Accept and display data from all levels of inheritance.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+    void getPersonDetails() {
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Age: ";
+        cin >> age;
+    }
+};
+
+class Student : public Person {
+public:
+    int rollNo;
+    void getStudentDetails() {
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+    }
+};
+
+class Marks : public Student {
+public:
+    float marks;
+    void getMarks() {
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+    void display() {
+        cout << "\nStudent Record:\n";
+        cout << "Name: " << name << "\nAge: " << age << "\nRoll No: " << rollNo << "\nMarks: " << marks << endl;
+    }
+};
+
+int main() {
+    Marks m;
+    m.getPersonDetails();
+    m.getStudentDetails();
+    m.getMarks();
+    m.display();
+    return 0;
+}
+Sample Output:
+
+Enter Name: Alice
+Enter Age: 19
+Enter Roll Number: 5
+Enter Marks: 88.5
+
+Student Record:
+Name: Alice
+Age: 19
+Roll No: 5
+Marks: 88.5
+Result: Multilevel inheritance was successfully implemented where data members are inherited across multiple levels.
