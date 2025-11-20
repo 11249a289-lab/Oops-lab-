@@ -1,0 +1,40 @@
+Program 10: File Handling in C++
+Aim: To demonstrate file reading and writing operations using file streams in C++.
+
+Algorithm:
+
+Start the program.
+Include the <fstream> header.
+Declare ofstream object to write data to a file.
+Declare ifstream object to read data from the file.
+Write text into the file using ofstream.
+Close the file.
+Reopen it in read mode and display its contents.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("sample.txt");
+    outFile << "Hello, this is a sample file.\n";
+    outFile << "File handling in C++ is easy!";
+    outFile.close();
+
+    ifstream inFile("sample.txt");
+    string line;
+    cout << "Contents of file:\n";
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+Sample Output:
+
+Contents of file:
+Hello, this is a sample file.
+File handling in C++ is easy!
+Result: The program successfully demonstrates file handling operations in C++ using file streams.
