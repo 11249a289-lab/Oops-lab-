@@ -1,0 +1,34 @@
+Program 3: Function Overloading
+Aim: To illustrate the concept of function overloading in C++.
+
+Algorithm:
+
+Start the program.
+Define a class MathOperation.
+Overload the function add() with different parameter lists.
+Call the overloaded functions.
+Stop the program.
+Source Code:
+
+#include <iostream>
+using namespace std;
+
+class MathOperation {
+public:
+    int add(int a, int b) { return a + b; }
+    float add(float a, float b) { return a + b; }
+    int add(int a, int b, int c) { return a + b + c; }
+};
+
+int main() {
+    MathOperation m;
+    cout << "Sum of two integers: " << m.add(10, 20) << endl;
+    cout << "Sum of two floats: " << m.add(5.5f, 4.5f) << endl;
+    cout << "Sum of three integers: " << m.add(1, 2, 3) << endl;
+    return 0;
+}
+Result:
+
+Sum of two integers: 30
+Sum of two floats: 10
+Sum of three integers: 6
