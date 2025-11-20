@@ -1,0 +1,56 @@
+Experiment 28: Simple Graphics Program in C++
+
+
+Aim
+
+To write a simple graphics program in C++ to draw basic shapes (circle, line, rectangle) using the graphics.h library.
+
+Algorithm
+
+1. Start the program.
+2. Include the header file <graphics.h> for graphics functions.
+3. Initialize the graphics mode using initgraph().
+4. Use graphics functions such as:
+circle() → to draw a circle
+line() → to draw a straight line
+rectangle() → to draw a rectangle
+5. Display the graphics output on the screen.
+6. Use getch() to wait for a key press.
+7. Close graphics mode using closegraph().
+8. End the program.
+
+Program: 
+
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    // Initialize graphics mode
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+    // Draw a circle
+    circle(200, 150, 50);
+    // Draw a rectangle
+    rectangle(100, 200, 300, 250);
+    // Draw a line
+    line(100, 100, 300, 100);
+    // Display message
+    outtextxy(150, 300, "Simple Graphics Program in C++");
+    getch();        // wait for user input
+    closegraph();   // close graphics window
+    return 0;
+}
+
+Output :
+
+The graphics window shows:
+A circle at position (200,150)
+A horizontal line from (100,100) to (300,100)
+A rectangle from (100,200) to (300,250)
+A text message:
+“Simple Graphics Program in C++”
+
+
+Result
+
+A simple graphics program in C++ using the BGI graphics library was successfully implemented.
+Basic shapes such as circle, rectangle, and line were drawn, demonstrating the use of fundamental graphics functions.
