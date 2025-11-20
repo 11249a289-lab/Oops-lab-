@@ -1,0 +1,49 @@
+Program 9: Friend Functions and Friend Class
+9(a) Friend Class Example
+Aim: To demonstrate how a friend class can access private and protected members of another class.
+
+Algorithm:
+
+Start the program.
+Create a class Geeks with private and protected members.
+Declare another class GFG as a friend.
+Use the friend class to access and display private and protected members.
+Stop the program.
+Source Code:
+
+#include <iostream>
+using namespace std;
+
+class Geeks {
+private:
+    int private_variable;
+
+protected:
+    int protected_variable;
+
+public:
+    Geeks() {
+        private_variable = 10;
+        protected_variable = 99;
+    }
+    friend class GFG;
+};
+
+class GFG {
+public:
+    void display(Geeks &t) {
+        cout << "The value of Private Variable = " << t.private_variable << endl;
+        cout << "The value of Protected Variable = " << t.protected_variable << endl;
+    }
+};
+
+int main() {
+    Geeks g;
+    GFG f;
+    f.display(g);
+    return 0;
+}
+Result:
+
+The value of Private Variable = 10
+The value of Protected Variable = 99
