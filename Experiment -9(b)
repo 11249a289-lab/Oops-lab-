@@ -1,0 +1,43 @@
+9(b) Friend Function Example
+Aim: To demonstrate how a global friend function can access private and protected members of a class.
+
+Algorithm:
+
+Start the program.
+Create a class base with private and protected members.
+Declare a global friend function friendFunction.
+Use the friend function to access and display the private and protected members.
+Stop the program.
+Source Code:
+
+#include <iostream>
+using namespace std;
+
+class base {
+private:
+    int private_variable;
+protected:
+    int protected_variable;
+
+public:
+    base() {
+        private_variable = 10;
+        protected_variable = 99;
+    }
+    friend void friendFunction(base &obj);
+};
+
+void friendFunction(base &obj) {
+    cout << "Private Variable: " << obj.private_variable << endl;
+    cout << "Protected Variable: " << obj.protected_variable << endl;
+}
+
+int main() {
+    base b;
+    friendFunction(b);
+    return 0;
+}
+Result:
+
+Private Variable: 10
+Protected Variable: 99
