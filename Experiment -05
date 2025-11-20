@@ -1,0 +1,54 @@
+Program 5: Constructor Types and Destructor
+Aim: To demonstrate default, parameterized, and copy constructors, and destructor in C++.
+
+Algorithm:
+
+Start the program.
+Define a class MyClass with data member value.
+Define constructors (default, parameterized, copy).
+Define a destructor.
+Create objects using all constructors.
+Stop the program.
+Source Code:
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int value;
+
+    MyClass() {
+        value = 0;
+        cout << "Default Constructor Called. Value: " << value << endl;
+    }
+
+    MyClass(int val) {
+        value = val;
+        cout << "Parameterized Constructor Called. Value: " << value << endl;
+    }
+
+    MyClass(const MyClass& other) {
+        value = other.value;
+        cout << "Copy Constructor Called. Value: " << value << endl;
+    }
+
+    ~MyClass() {
+        cout << "Destructor Called for object with value: " << value << endl;
+    }
+};
+
+int main() {
+    MyClass obj1;
+    MyClass obj2(10);
+    MyClass obj3 = obj2;
+    return 0;
+}
+Result:
+
+Default Constructor Called. Value: 0
+Parameterized Constructor Called. Value: 10
+Copy Constructor Called. Value: 10
+Destructor Called for object with value: 10
+Destructor Called for object with value: 10
+Destructor Called for object with value: 0
