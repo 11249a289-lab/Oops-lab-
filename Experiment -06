@@ -1,0 +1,64 @@
+Program 6: Inheritance in C++
+Aim: To demonstrate single inheritance in C++.
+
+Algorithm:
+
+Start the program.
+Create a base class Person with data members name and age.
+Create a derived class Student that inherits publicly from Person.
+Add data member studentID in the derived class.
+Define a member function to display all details.
+Create an object of the derived class and display data.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    void getDetails() {
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Age: ";
+        cin >> age;
+    }
+};
+
+class Student : public Person {
+public:
+    int studentID;
+
+    void getStudentDetails() {
+        cout << "Enter Student ID: ";
+        cin >> studentID;
+    }
+
+    void display() {
+        cout << "\nStudent Details:\n";
+        cout << "Name: " << name << "\nAge: " << age << "\nStudent ID: " << studentID << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.getDetails();
+    s.getStudentDetails();
+    s.display();
+    return 0;
+}
+Sample Output:
+
+Enter Name: John
+Enter Age: 20
+Enter Student ID: 101
+
+Student Details:
+Name: John
+Age: 20
+Student ID: 101
+Result: The program successfully demonstrates single inheritance where the derived class inherits data and behavior from the base class.
