@@ -1,0 +1,62 @@
+Program 1: Class and Objects Implementation
+Aim: To illustrate the concept of Class and Objects in C++, and to implement member functions defined inside and outside the class.
+
+Algorithm:
+
+Start the program.
+Define a class named Car with data members brand, model, and year.
+Define a member function displayInfo() inside the class.
+Declare a member function startEngine() inside the class and define it outside the class using the scope resolution operator.
+Create two objects of the Car class: myCar and anotherCar.
+Assign values to their data members.
+Call the member functions displayInfo() and startEngine() for both objects.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    string model;
+    int year;
+
+    void displayInfo() {
+        cout << "Brand: " << brand << ", Model: " << model << ", Year: " << year << endl;
+    }
+
+    void startEngine();
+};
+
+void Car::startEngine() {
+    cout << "The " << brand << " " << model << " engine is starting..." << endl;
+}
+
+int main() {
+    Car myCar;
+    Car anotherCar;
+
+    myCar.brand = "Toyota";
+    myCar.model = "Camry";
+    myCar.year = 2023;
+
+    anotherCar.brand = "Honda";
+    anotherCar.model = "Civic";
+    anotherCar.year = 2022;
+
+    myCar.displayInfo();
+    myCar.startEngine();
+
+    anotherCar.displayInfo();
+    anotherCar.startEngine();
+
+    return 0;
+}
+Result:
+
+Brand: Toyota, Model: Camry, Year: 2023
+The Toyota Camry engine is starting...
+Brand: Honda, Model: Civic, Year: 2022
+The Honda Civic engine is starting...
