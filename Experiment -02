@@ -1,0 +1,55 @@
+Program 2: Constructor and Destructor
+Aim: To illustrate the use of constructors and destructors in C++.
+
+Algorithm:
+
+Start the program.
+Define a class Student with data members name and age.
+Define a constructor to initialize the data members.
+Define a member function display() to show the details.
+Define a destructor to display a message when an object is destroyed.
+Create objects and call the display function.
+Stop the program.
+Source Code:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    Student(string n, int a) {
+        name = n;
+        age = a;
+        cout << "Constructor called for " << name << endl;
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+
+    ~Student() {
+        cout << "Destructor called for " << name << endl;
+    }
+};
+
+int main() {
+    Student s1("John", 20);
+    Student s2("Alice", 19);
+
+    s1.display();
+    s2.display();
+
+    return 0;
+}
+Result:
+
+Constructor called for John
+Constructor called for Alice
+Name: John, Age: 20
+Name: Alice, Age: 19
+Destructor called for Alice
+Destructor called for John
